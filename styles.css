@@ -1,0 +1,143 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Fondo negro */
+    margin: 0;
+    color: white; /* Texto en blanco */
+  }
+  
+  .container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Aumentamos el ancho máximo */
+  }
+  
+  h1 {
+    font-size: 2.5rem; /* Título más grande */
+    margin-bottom: 30px; /* Espaciado mayor */
+  }
+  
+  .coin {
+    width: 150px; /* Aumento de tamaño */
+    height: 150px; /* Aumento de tamaño */
+    border-radius: 50%;
+    position: relative;
+    margin: 20px auto;
+    transform-style: preserve-3d;
+    transform-origin: center;
+  }
+  
+  .coin::before, .coin::after {
+    content: "";
+    position: absolute;
+    width: 150px; /* Aumento de tamaño */
+    height: 150px; /* Aumento de tamaño */
+    border-radius: 50%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Texto más grande */
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .coin::before {
+    content: "Heads";
+    background-color: red; /* Heads rojo */
+  }
+  
+  .coin::after {
+    content: "Tails";
+    background-color: green; /* Tails verde */
+    transform: rotateY(180deg);
+  }
+  
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 30px; /* Mayor padding */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Sombras más fuertes */
+    border-radius: 12px; /* Bordes más redondeados */
+    text-align: center;
+    width: 300px; /* Aumento de tamaño */
+  }
+  
+  .popup button {
+    margin-top: 20px; /* Espaciado mayor */
+    padding: 15px 25px; /* Botón más grande */
+    font-size: 16px; /* Texto más grande */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup button:hover {
+    background-color: #0056b3;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  button {
+    padding: 15px 30px; /* Botón más grande */
+    font-size: 18px; /* Texto más grande */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Botón de Discord */
+  #discordButton {
+    position: fixed;
+    top: 10px; /* Ajustar al borde superior */
+    right: 10px; /* Ajustar al borde derecho */
+    width: 60px; /* Botón más grande */
+    height: 60px; /* Botón más grande */
+  }
+  
+  .discord-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  /* Animación que termina en Heads */
+  @keyframes spin-heads {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(1440deg); /* Giro rápido pero controlado */
+    }
+  }
+  
+  /* Animación que termina en Tails */
+  @keyframes spin-tails {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(1620deg); /* Giro rápido pero controlado */
+    }
+  }
+  
